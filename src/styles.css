@@ -1,0 +1,64 @@
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  background-color: rgb(255, 255, 255, 0.15);
+  width: 200px;
+  height: 200px;
+}
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-result {
+  pointer-events: none;
+  border: 1px solid #d4d4d4;
+  /* width: 600px;
+    height: 600px; */
+  position: fixed;
+  /* Shift the element's center 50px lower */
+  top: calc(50% + 50px);
+  /* Shift it further away from the right edge */
+  right: 30px;
+  transform: translateY(-50%);
+  z-index: 3;
+  background-color: white;
+}
+
+/* On hover, one zoomed and done */
+
+#container {
+  display: inline-block;
+  overflow: hidden;
+}
+#container img {
+  display: block;
+  transition: transform 0.4s;
+}
+#container:hover img {
+  transform: scale(1.3);
+  transform-origin: 50% 50%;
+}
+
+/* On hover, mouse move */
+.container-zoom{
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+  width: 100%;
+}
+
+.simple-zoomer:hover .simple-zoomer-image {
+  transform: scale(var(--zoom-level));
+}
+
+.container-zoom img {
+  transition: opacity 0.5s;
+}
+
+.container-zoom:hover img {
+  opacity: 0;
+}
+
